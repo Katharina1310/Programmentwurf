@@ -1,28 +1,34 @@
-# Minimum required CMake version
 cmake_minimum_required(VERSION 3.20)
+project(DeveloperProject VERSION 1.0 LANGUAGES CXX)
 
-# Project name and version
-project(developer VERSION 1.0 LANGUAGES CXX)
-
-# Set C++ standard to C++14 and require it
+# C++ Standard
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Enable all warnings and extra warnings
-add_compile_options(-Wall -Wextra -pedantic)
+# Compiler-Warnungen
+if(MSVC)
+    add_compile_options(/W4 /permissive-)
+else()
+    add_compile_options(-Wall -Wextra -pedantic)
+endif()
 
-# Include testing module and enable testing
-include(CTest)
-enable_testing()
+# Logo-Pfad definieren (relativ vom Executable aus)
+add_compile_definitions(LOGO_PATH="./logos/")
 
-# Add executable target and specify source files
-add_executable(group_p_cpp
-    src/developer.cpp
-    src/main.cpp
+# Include-Verzeichnis
+include_directories(include)
+
+# Bibliothek mit allen Klassendateien
+add_library(developer_lib
+    src/Developer.cpp
+    src/JuniorDeveloper.cpp
+    src/SeniorDeveloper.cpp
 )
 
-# Add include directories
-target_include_directories(group_p_cpp PRIVATE ${CMAKE_SOURCE_DIR}/include)
+# Hauptprogramm erstellen
+add_executable(main_app src/main.cpp)
+target_link_libraries(main_app PRIVATE developer_lib)
 
-# Define macro for logo path
-target_compile_definitions(group_p_cpp PRIVATE LOGO_PATH=\"./\")
+# Optionale Tests (wenn du sie später hinzufügen willst)
+include(CTest)
+enable_testing()
