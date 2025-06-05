@@ -12,7 +12,7 @@ int main() {
     auto junior = std::make_shared<JuniorDeveloper>("Peter Parker", "Spiderman");
 
     try {
-        senior->load_logo_from_file("wonderwoman.txt");
+        senior->load_logo_from_file("wonder_woman.txt");
         junior->load_logo_from_file("spiderman.txt");
     } catch (const std::runtime_error& e) {
         std::cerr << e.what() << std::endl;

@@ -56,7 +56,7 @@ std::string Developer::get_logo() const {
 // stream-operator for Developer
 std::ostream& operator<<(std::ostream& os, const Developer& dev) {
     os << "Name: " << dev.get_name() << "\n"
-       << "Alias: " << dev.get_alias_name();
+       << "Alias: " << dev.get_alias_name() << "\n";
 
     if (!dev.get_logo().empty()) {
         os << "\nLogo:\n" << dev.get_logo();
