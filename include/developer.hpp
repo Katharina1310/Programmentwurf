@@ -27,7 +27,7 @@ class Developer
     std::string get_logo() const;
     
     //virtual method solve_problem:
-    //virtual void solve_problem() const = 0;
+    virtual void solve_problem() const = 0;
     //virtual ~Developer() = default;  
 
 };
