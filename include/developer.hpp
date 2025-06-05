@@ -32,4 +32,7 @@ class Developer
 
 };
 
+//stream-operator for Developer:
+std::ostream& operator<<(std::ostream& os, const Developer& dev);
+
 #endif
