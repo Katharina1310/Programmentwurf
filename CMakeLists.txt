@@ -15,8 +15,7 @@ endif()
 # Include directory for header files
 include_directories(include)
 
-# Define macro LOGO_PATH as a string (with escaped quotes)
-# Adjust the path as needed depending on where the executable runs
+# Define macro LOGO_PATH as a string (adjust path as needed)
 add_compile_definitions(LOGO_PATH=\"../logos/\")
 
 # Build the library from implementation files
@@ -26,10 +25,31 @@ add_library(developer_lib
     src/SeniorDeveloper.cpp
 )
 
-# Build the main application
+
+# Make sure the macro is visible to the library target as well
+target_compile_definitions(developer_lib PRIVATE LOGO_PATH=\"../logos/\")
+
+# Build the main application executable
 add_executable(main_app src/main.cpp)
 target_link_libraries(main_app PRIVATE developer_lib)
-
-# Ensure the macro is visible to both targets
-target_compile_definitions(developer_lib PRIVATE LOGO_PATH=\"../logos/\")
 target_compile_definitions(main_app PRIVATE LOGO_PATH=\"../logos/\")
+
+# GoogleTest holen und einbinden
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/release-1.12.1.zip
+)
+FetchContent_MakeAvailable(googletest)
+
+enable_testing()
+
+# Test executable bauen
+add_executable(tests
+    tests/test_developer.cpp
+)
+
+target_link_libraries(tests developer_lib gtest_main)
+
+include(GoogleTest)
+gtest_discover_tests(tests)
