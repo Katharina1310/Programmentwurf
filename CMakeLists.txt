@@ -24,7 +24,7 @@ add_compile_definitions(LOGO_PATH=\"../logos/\")
 
 # Build the library from implementation files
 add_library(developer_lib
-    src/Developer.cpp
+    src/developer.cpp
     src/JuniorDeveloper.cpp
     src/SeniorDeveloper.cpp
 )

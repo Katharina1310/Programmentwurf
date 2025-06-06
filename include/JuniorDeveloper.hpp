@@ -6,7 +6,7 @@
 #ifndef JUNIORDEVELOPER_HPP
 #define JUNIORDEVELOPER_HPP
 
-#include "Developer.hpp"
+#include "developer.hpp"
 
 /**
  * @class JuniorDeveloper

@@ -6,7 +6,7 @@
 #ifndef SENIORDEVELOPER_HPP
 #define SENIORDEVELOPER_HPP
 
-#include "Developer.hpp"
+#include "developer.hpp"
 
 /**
  * @class SeniorDeveloper
