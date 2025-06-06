@@ -1,3 +1,7 @@
+## \brief CMake configuration file for project setup.
+## \author Konstantin Growitsch and Katharina Benedikt
+## \06.06.2025
+
 cmake_minimum_required(VERSION 3.20)
 project(DeveloperProject LANGUAGES CXX)
 
