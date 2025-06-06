@@ -30,7 +30,7 @@ jobs:
       - name: Install doxygen
         run: sudo apt install -y doxygen graphviz      
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: create Doxygen output
         run: doxygen Doxyfile
       - name: create top-level index.html
@@ -38,7 +38,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4
         with:
           path: '${{github.workspace}}/doxygen_output/html'
       - name: Deploy to GitHub Pages
