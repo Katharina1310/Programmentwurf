@@ -1,22 +1,37 @@
-// File: src/SeniorDeveloper.cpp
+/**
+ * @file SeniorDeveloper.cpp
+ * @brief Implementation of the SeniorDeveloper class.
+ */
+
 #include "SeniorDeveloper.hpp"
 #include <iostream>
 
-// Constructor: Initializes a SeniorDeveloper with a name and alias,
-// passing them to the base Developer class constructor
+/**
+ * @brief Constructor that initializes a SeniorDeveloper.
+ * 
+ * Passes the name and aliasName parameters to the base Developer class constructor.
+ * 
+ * @param name The real name of the senior developer.
+ * @param aliasName The alias or nickname of the senior developer.
+ */
 SeniorDeveloper::SeniorDeveloper(const std::string& name, const std::string& aliasName)
     : Developer(name, aliasName) {}
 
-// Implementation of the solve_problem method for SeniorDeveloper
+/**
+ * @brief Overrides the abstract solve_problem method.
+ * 
+ * Prints developer details, simulates solving a problem confidently,
+ * and calls the static drink_coffee method.
+ */
 void SeniorDeveloper::solve_problem() const {
     std::cout << "Solving a problem:" << std::endl;
 
-    // Print the developer's details using the overloaded << operator
+    /** Output developer's information using the stream insertion operator */
     std::cout << *this;
 
-    // Simulate solving the problem with a confident message
+    /** Display a confident message after solving the problem */
     std::cout << "Ha, that was EZ!" << std::endl;
 
-    // Call the static method to simulate drinking coffee after solving the problem
+    /** Simulate drinking coffee after problem solving */
     Developer::drink_coffee();
 }

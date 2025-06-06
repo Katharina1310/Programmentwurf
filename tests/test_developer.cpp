@@ -1,34 +1,43 @@
-// Include Google Test framework
-#include <gtest/gtest.h>
+/**
+ * @file test_developer.cpp
+ * @brief Unit tests for the Developer class hierarchy using Google Test.
+ */
 
-// Include headers for Developer classes
+#include <gtest/gtest.h>
 #include "developer.hpp"
 #include "JuniorDeveloper.hpp"
 
-// Define a test fixture class for common setup
+/**
+ * @class DeveloperTest
+ * @brief Test fixture class for testing Developer functionality.
+ * 
+ * Sets up a JuniorDeveloper instance for reuse in test cases.
+ */
 class DeveloperTest : public ::testing::Test {
 protected:
-    // Create a JuniorDeveloper object for use in the tests
     JuniorDeveloper dev{"Anikan Skywalker", "Darth Vader"};
 };
 
-// Test case: Ensure constructor sets name, alias name, and empty logo correctly
+/**
+ * @brief Tests if the constructor initializes name, alias, and logo correctly.
+ */
 TEST_F(DeveloperTest, ConstructorInitializesCorrectly) {
-    EXPECT_EQ(dev.get_name(), "Anikan Skywalker");        // Check if name is set correctly
-    EXPECT_EQ(dev.get_alias_name(), "Darth Vader");       // Check if alias is set correctly
-    EXPECT_EQ(dev.get_logo(), "");                        // Logo should be empty initially
+    EXPECT_EQ(dev.get_name(), "Anikan Skywalker");
+    EXPECT_EQ(dev.get_alias_name(), "Darth Vader");
+    EXPECT_EQ(dev.get_logo(), "");
 }
 
-// Test case: Load a valid logo file and ensure the logo is not empty
+/**
+ * @brief Tests loading a valid logo file successfully updates the logo string.
+ */
 TEST_F(DeveloperTest, LoadLogoValidFile) {
-    dev.load_logo_from_file("Darth_Vader.txt");           // Load existing file
-    EXPECT_FALSE(dev.get_logo().empty());                 // Logo should now be loaded
+    dev.load_logo_from_file("Darth_Vader.txt");
+    EXPECT_FALSE(dev.get_logo().empty());
 }
 
-// Test case: Attempt to load a nonexistent file and expect an exception
+/**
+ * @brief Tests that loading a nonexistent logo file throws a runtime_error.
+ */
 TEST_F(DeveloperTest, LoadLogoInvalidFileThrows) {
-    EXPECT_THROW(
-        dev.load_logo_from_file("non_existent_logo.txt"), // Load non-existing file
-        std::runtime_error                                // Should throw std::runtime_error
-    );
+    EXPECT_THROW(dev.load_logo_from_file("non_existent_logo.txt"), std::runtime_error);
 }

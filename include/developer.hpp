@@ -4,42 +4,77 @@
 #include <string>
 #include <stdexcept>
 
-// Abstract base class representing a generic developer
+/**
+ * @brief Abstract base class representing a generic developer.
+ */
 class Developer
 {
 protected:
-    // Member variables to store developer's name, alias, and logo (ASCII art)
+    /** Developer's real name */
     std::string name;
+
+    /** Developer's alias or nickname */
     std::string alias_name;
+
+    /** Developer's ASCII art logo */
     std::string logo;
 
 public:
-    // Constructor initializing name and alias name
+    /**
+     * @brief Constructor initializing the developer's name and alias.
+     * @param name Real name of the developer.
+     * @param alias_name Alias or nickname of the developer.
+     */
     Developer(const std::string& name, const std::string& alias_name);
 
-    // Static method simulating the developer drinking coffee
+    /**
+     * @brief Static method simulating the developer drinking coffee.
+     */
     static void drink_coffee();
 
-    // Method to load ASCII logo from a file and store it in the logo string
+    /**
+     * @brief Loads the ASCII logo from a file into the member variable.
+     * @param file_name The path to the logo file.
+     * @throws std::runtime_error if file cannot be opened.
+     */
     void load_logo_from_file(const std::string& file_name);
 
-    // Getter for the real name
+    /**
+     * @brief Getter for the developer's real name.
+     * @return The name of the developer.
+     */
     std::string get_name() const;
 
-    // Getter for the alias name
+    /**
+     * @brief Getter for the developer's alias name.
+     * @return The alias of the developer.
+     */
     std::string get_alias_name() const;
 
-    // Getter for the loaded logo
+    /**
+     * @brief Getter for the loaded ASCII logo.
+     * @return The logo string.
+     */
     std::string get_logo() const;
 
-    // Used to simulate solving a problem
+    /**
+     * @brief Pure virtual method to simulate solving a problem.
+     * Must be implemented by derived classes.
+     */
     virtual void solve_problem() const = 0;
 
-    // Virtual destructor (commented out here, but recommended in real use)
+    /**
+     * @brief Virtual destructor (recommended).
+     */
     // virtual ~Developer() = default;
 };
 
-// Overloaded stream insertion operator to output developer information
+/**
+ * @brief Overloads the stream insertion operator to output developer information.
+ * @param os The output stream.
+ * @param dev The Developer object to output.
+ * @return The output stream.
+ */
 std::ostream& operator<<(std::ostream& os, const Developer& dev);
 
 #endif

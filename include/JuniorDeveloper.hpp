@@ -1,17 +1,29 @@
-// File: include/JuniorDeveloper.hpp
+/**
+ * @file JuniorDeveloper.hpp
+ * @brief Declaration of the JuniorDeveloper class, derived from Developer.
+ */
 
 #ifndef JUNIORDEVELOPER_HPP
 #define JUNIORDEVELOPER_HPP
 
 #include "Developer.hpp"
 
-// JuniorDeveloper is a subclass of Developer
+/**
+ * @class JuniorDeveloper
+ * @brief Represents a junior developer, subclass of Developer.
+ */
 class JuniorDeveloper : public Developer {
 public:
-    // Constructor: initializes the JuniorDeveloper with a name and an alias
+    /**
+     * @brief Constructor initializing the JuniorDeveloper with a name and alias.
+     * @param name The real name of the junior developer.
+     * @param aliasName The alias or nickname of the junior developer.
+     */
     JuniorDeveloper(const std::string& name, const std::string& aliasName);
 
-    // Represents how a junior developer solves a problem
+    /**
+     * @brief Implementation of problem solving specific to a junior developer.
+     */
     void solve_problem() const override;
 };
 

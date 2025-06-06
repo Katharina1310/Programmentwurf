@@ -1,17 +1,29 @@
-// File: include/SeniorDeveloper.hpp
+/**
+ * @file SeniorDeveloper.hpp
+ * @brief Declaration of the SeniorDeveloper class, derived from Developer.
+ */
 
 #ifndef SENIORDEVELOPER_HPP
 #define SENIORDEVELOPER_HPP
 
 #include "Developer.hpp"
 
-// SeniorDeveloper is a subclass of Developer
+/**
+ * @class SeniorDeveloper
+ * @brief Represents a senior developer, subclass of Developer.
+ */
 class SeniorDeveloper : public Developer {
 public:
-    // Constructor: initializes the SeniorDeveloper with a name and an alias
+    /**
+     * @brief Constructor initializing the SeniorDeveloper with a name and alias.
+     * @param name The real name of the senior developer.
+     * @param aliasName The alias or nickname of the senior developer.
+     */
     SeniorDeveloper(const std::string& name, const std::string& aliasName);
 
-    // Defines how a senior developer solves a problem
+    /**
+     * @brief Implementation of problem solving specific to a senior developer.
+     */
     void solve_problem() const override;
 };
 
