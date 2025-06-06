@@ -34,13 +34,13 @@ jobs:
       - name: create Doxygen output
         run: doxygen Doxyfile
       - name: create top-level index.html
-        run: echo \<meta http-equiv=\""Refresh\"" content=\""0; url='https://katharina1310.github.io/programmentwurf/'\"" /\>  > doxygen_output/index.html
+        run: echo \<meta http-equiv=\""Refresh\"" content=\""0; url='https://katharina1310.github.io/programmentwurf/html/'\"" /\>  > doxygen_output/html/index.html
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: '${{github.workspace}}/doxygen_output'
+          path: '${{github.workspace}}/doxygen_output/html'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
