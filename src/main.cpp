@@ -24,6 +24,7 @@ int main() {
     for (const auto& dev : devs) {
         dev->solve_problem();
     }
-
+    std::cout << "\nDruecken Sie die Eingabetaste, um das Programm zu beenden...";
+    std::cin.get();
     return 0;
 }
