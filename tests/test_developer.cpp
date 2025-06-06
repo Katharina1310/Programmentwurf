@@ -4,17 +4,17 @@
 
 class DeveloperTest : public ::testing::Test {
 protected:
-    JuniorDeveloper dev{"Peter Parker", "Spiderman"};
+    JuniorDeveloper dev{"Anikan Skywalker", "Darth Vader"};
 };
 
 TEST_F(DeveloperTest, ConstructorInitializesCorrectly) {
-    EXPECT_EQ(dev.get_name(), "Peter Parker");
-    EXPECT_EQ(dev.get_alias_name(), "Spiderman");
+    EXPECT_EQ(dev.get_name(), "Anikan Skywalker");
+    EXPECT_EQ(dev.get_alias_name(), "Darth Vader");
     EXPECT_EQ(dev.get_logo(), "");
 }
 
 TEST_F(DeveloperTest, LoadLogoValidFile) {
-    dev.load_logo_from_file("spiderman_logo.txt");
+    dev.load_logo_from_file("Darth_Vader.txt");
     EXPECT_FALSE(dev.get_logo().empty());
 }
 
