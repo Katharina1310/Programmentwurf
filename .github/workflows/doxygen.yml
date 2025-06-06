@@ -34,7 +34,7 @@ jobs:
       - name: create Doxygen output
         run: doxygen Doxyfile
       - name: create top-level index.html
-        run: echo \<meta http-equiv=\""Refresh\"" content=\""0; url='https://github.io/Katharina1310/Programmentwurf.git'\"" /\>  > doxygen_output/index.html
+        run: echo \<meta http-equiv=\""Refresh\"" content=\""0; url='https://katharina1310.github.io/programmentwurf/'\"" /\>  > doxygen_output/index.html
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
