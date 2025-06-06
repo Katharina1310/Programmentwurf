@@ -8,12 +8,12 @@
 int main() {
     std::vector<std::shared_ptr<Developer>> devs;
 
-    auto senior = std::make_shared<SeniorDeveloper>("Diana Prince", "Wonder Woman");
-    auto junior = std::make_shared<JuniorDeveloper>("Peter Parker", "Spiderman");
+    auto senior = std::make_shared<SeniorDeveloper>("Abu", "Aladins Affe");
+    auto junior = std::make_shared<JuniorDeveloper>("Anikan Skywalker", "Darth Vader");
 
     try {
-        senior->load_logo_from_file("wonder_woman.txt");
-        junior->load_logo_from_file("spiderman.txt");
+        senior->load_logo_from_file("Abu.txt");
+        junior->load_logo_from_file("Darth_Vader.txt");
     } catch (const std::runtime_error& e) {
         std::cerr << e.what() << std::endl;
     }
