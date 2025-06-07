@@ -31,7 +31,7 @@ TEST_F(DeveloperTest, ConstructorInitializesCorrectly) {
  * @brief Tests loading a valid logo file successfully updates the logo string.
  */
 TEST_F(DeveloperTest, LoadLogoValidFile) {
-    dev.load_logo_from_file("Darth_Vader.txt");
+    dev.load_logo_from_file("../logos/Darth_Vader.txt");
     EXPECT_FALSE(dev.get_logo().empty());
 }
 

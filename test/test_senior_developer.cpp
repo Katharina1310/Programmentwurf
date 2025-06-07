@@ -31,7 +31,7 @@ TEST_F(SeniorDeveloperTest, ConstructorInitializesCorrectly) {
  * @brief Tests loading a valid logo file successfully updates the logo string.
  */
 TEST_F(SeniorDeveloperTest, LoadLogoValidFile) {
-    dev.load_logo_from_file("Abu.txt");
+    dev.load_logo_from_file("../logos/Abu.txt");
     EXPECT_FALSE(dev.get_logo().empty());
 }
 

@@ -1,0 +1,5 @@
+if(EXISTS "/workspaces/Programmentwurf/senior_tests[1]_tests.cmake")
+  include("/workspaces/Programmentwurf/senior_tests[1]_tests.cmake")
+else()
+  add_test(senior_tests_NOT_BUILT senior_tests_NOT_BUILT)
+endif()

@@ -1,0 +1,5 @@
+if(EXISTS "/workspaces/Programmentwurf/junior_tests[1]_tests.cmake")
+  include("/workspaces/Programmentwurf/junior_tests[1]_tests.cmake")
+else()
+  add_test(junior_tests_NOT_BUILT junior_tests_NOT_BUILT)
+endif()

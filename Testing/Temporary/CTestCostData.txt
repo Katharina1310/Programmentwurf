@@ -1,0 +1,8 @@
+DeveloperTest.ConstructorInitializesCorrectly 6 0.000345396
+DeveloperTest.LoadLogoValidFile 2 0.0010516
+DeveloperTest.LoadLogoInvalidFileThrows 6 0.000465545
+SeniorDeveloperTest.ConstructorInitializesCorrectly 6 0.000578645
+SeniorDeveloperTest.LoadLogoValidFile 2 0.0009209
+SeniorDeveloperTest.LoadLogoInvalidFileThrows 6 0.000322469
+SeniorDeveloperTest.LoadLogoEmptyFilenameThrows 6 0.000313872
+---

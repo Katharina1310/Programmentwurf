@@ -1,0 +1,7 @@
+add_test([=[DeveloperTest.ConstructorInitializesCorrectly]=]  /workspaces/Programmentwurf/junior_tests [==[--gtest_filter=DeveloperTest.ConstructorInitializesCorrectly]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[DeveloperTest.ConstructorInitializesCorrectly]=]  PROPERTIES WORKING_DIRECTORY /workspaces/Programmentwurf SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[DeveloperTest.LoadLogoValidFile]=]  /workspaces/Programmentwurf/junior_tests [==[--gtest_filter=DeveloperTest.LoadLogoValidFile]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[DeveloperTest.LoadLogoValidFile]=]  PROPERTIES WORKING_DIRECTORY /workspaces/Programmentwurf SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[DeveloperTest.LoadLogoInvalidFileThrows]=]  /workspaces/Programmentwurf/junior_tests [==[--gtest_filter=DeveloperTest.LoadLogoInvalidFileThrows]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[DeveloperTest.LoadLogoInvalidFileThrows]=]  PROPERTIES WORKING_DIRECTORY /workspaces/Programmentwurf SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  junior_tests_TESTS DeveloperTest.ConstructorInitializesCorrectly DeveloperTest.LoadLogoValidFile DeveloperTest.LoadLogoInvalidFileThrows)
