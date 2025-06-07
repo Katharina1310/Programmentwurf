@@ -1,2 +1,39 @@
-# Alles im build-Ordner ignorieren
+# Ignore build directories and generated files
 /build/
+/cmake-build-debug/
+/CMakeFiles/
+/CMakeCache.txt
+Makefile
+cmake_install.cmake
+
+# Ignore executables and object files
+*.exe
+*.out
+*.app
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+
+# Ignore GoogleTest temporary object files (if any)
+/test/*.o
+
+# Ignore log files
+*.log
+
+# Ignore editor temporary files
+*~
+*.swp
+.DS_Store
+
+# Ignore binary image files (if any)
+*.png
+*.jpg
+*.jpeg
+*.bmp
+
+# Ignore archives and compressed files
+*.zip
+*.tar.gz
+

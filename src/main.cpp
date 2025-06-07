@@ -3,11 +3,11 @@
  * @brief Main program to create and manage Developer objects.
  */
 
+#include "junior_developer.hpp"
+#include "senior_developer.hpp"
 #include <iostream>
 #include <vector>
 #include <memory>
-#include "JuniorDeveloper.hpp"
-#include "SeniorDeveloper.hpp"
 
 /**
  * @brief Main function to run the developer simulation.
@@ -59,13 +59,13 @@ int main() {
      * 
      * Prints two empty lines after each developer except the last
      */
-    for (size_t i = 0; i < devs.size(); ++i) {
-        devs[i]->solve_problem();
+   for (auto it = devs.begin(); it != devs.end(); ++it) {
+    (*it)->solve_problem();
 
-        if (i < devs.size() - 1) {
-            std::cout << "\n\n";
-        }
+    if (std::next(it) != devs.end()) {
+        std::cout << "\n\n";
     }
+   }
 
     /** @brief Wait for user input before exiting */
     std::cout << "\nPress Enter to exit...";

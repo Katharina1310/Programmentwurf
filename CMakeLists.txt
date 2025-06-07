@@ -2,58 +2,51 @@
 ## \author Konstantin Growitsch and Katharina Benedikt
 ## \06.06.2025
 
+# define the minimum cmake version
 cmake_minimum_required(VERSION 3.20)
+# define the project name
 project(DeveloperProject LANGUAGES CXX)
 
-# Set C++ standard
+# define the cxx standard version
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Compiler warnings
-if(MSVC)
-    add_compile_options(/W4 /permissive-)
-else()
-    add_compile_options(-Wall -Wextra -pedantic)
-endif()
+# add some compile options
+add_compile_options(-Wall -Wextra -pedantic)
 
-# Include directory for header files
+# include directory for header files
 include_directories(include)
 
-# Define macro LOGO_PATH as a string (adjust path as needed)
+# add a macro for the logo path
 add_compile_definitions(LOGO_PATH=\"../logos/\")
 
-# Build the library from implementation files
-add_library(developer_lib
-    src/developer.cpp
-    src/JuniorDeveloper.cpp
-    src/SeniorDeveloper.cpp
-)
+# build the library from implementation files
+add_library(developer_lib src/developer.cpp src/junior_developer.cpp src/senior_developer.cpp)
 
-
-# Make sure the macro is visible to the library target as well
+# make sure the macro is visible to the library target as well
 target_compile_definitions(developer_lib PRIVATE LOGO_PATH=\"../logos/\")
 
-# Build the main application executable
-add_executable(main_app src/main.cpp)
-target_link_libraries(main_app PRIVATE developer_lib)
-target_compile_definitions(main_app PRIVATE LOGO_PATH=\"../logos/\")
+# build the main application executable
+add_executable(cmake_exec src/main.cpp)
+target_link_libraries(cmake_exec PRIVATE developer_lib)
+target_compile_definitions(cmake_exec PRIVATE LOGO_PATH=\"../logos/\")
 
-# GoogleTest holen und einbinden
-include(FetchContent)
-FetchContent_Declare(
-  googletest
-  URL https://github.com/google/googletest/archive/release-1.12.1.zip
-)
-FetchContent_MakeAvailable(googletest)
-
+# GoogleTest 
+# enable the testing
 enable_testing()
-
-# Test executable bauen
-add_executable(tests
-    tests/test_developer.cpp
-)
-
-target_link_libraries(tests developer_lib gtest_main)
-
+# check if we have gtest
+find_package (GTest REQUIRED)
+# include the gtest CMake stuff
 include(GoogleTest)
-gtest_discover_tests(tests)
+
+# JuniorDeveloper tests
+add_executable(junior_tests test/test_junior_developer.cpp)
+target_link_libraries(junior_tests PRIVATE GTest::GTest GTest::Main developer_lib)
+target_include_directories(junior_tests PUBLIC include)
+gtest_discover_tests(junior_tests)
+
+# SeniorDeveloper Tests
+add_executable(senior_tests test/test_senior_developer.cpp)
+target_link_libraries(senior_tests PRIVATE GTest::GTest GTest::Main developer_lib)
+target_include_directories(senior_tests PUBLIC include)
+gtest_discover_tests(senior_tests)

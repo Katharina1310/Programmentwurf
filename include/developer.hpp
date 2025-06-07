@@ -66,7 +66,7 @@ public:
     /**
      * @brief Virtual destructor (recommended).
      */
-    // virtual ~Developer() = default;
+    virtual ~Developer() = default;
 };
 
 /**

@@ -1,3 +1,11 @@
+/**
+ * @file developer.cpp
+ * @brief Implementation of the Developer class.
+ * 
+ * Contains the implementation of methods for initializing a developer,
+ * loading a logo from file, and accessing developer details.
+ */
+
 #include "developer.hpp"
 #include <fstream>
 #include <iostream>
