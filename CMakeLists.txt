@@ -14,7 +14,7 @@ include_directories(include)
 
 # Define absolute path to logos directory
 set(LOGO_PATH_ABS "${CMAKE_SOURCE_DIR}/logos/")
-add_compile_definitions(LOGO_PATH="\"${LOGO_PATH_ABS}")
+add_compile_definitions(LOGO_PATH="${LOGO_PATH_ABS}")
 
 # Build library from source files
 add_library(developer_lib

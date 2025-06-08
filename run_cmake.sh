@@ -1,18 +1,18 @@
 #!/bin/bash
-
-# Exit immediately if a command exits with a non-zero status
 set -e
 
-echo "[1/4] Configuring CMake..."
-cmake -S . -B build
+echo "[1/5] Removing old build directory..."
+rm -rf build
 
-echo "[2/4] Building the project..."
-cmake --build build
-
-echo "[3/4] Changing to the build directory..."
+echo "[2/5] Creating new build directory..."
+mkdir build
 cd build
 
-echo "[4/4] Starting the application..."
+echo "[3/5] Configuring CMake..."
+cmake ..
+
+echo "[4/5] Building the project..."
+make
+
+echo "[5/5] Starting the application..."
 ./cmake_exec
-
-

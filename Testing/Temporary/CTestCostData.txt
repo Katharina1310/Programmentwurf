@@ -1,10 +1,12 @@
-DeveloperTest.ConstructorInitializesCorrectly 14 0.000121647
+DeveloperTest.ConstructorInitializesCorrectly 16 9.51236e-05
 DeveloperTest.LoadLogoValidFile 2 0
-DeveloperTest.LoadLogoInvalidFileThrows 14 0.000131003
-SeniorDeveloperTest.ConstructorInitializesCorrectly 14 0.000103254
-SeniorDeveloperTest.LoadLogoValidFile 2 0
-SeniorDeveloperTest.LoadLogoInvalidFileThrows 14 9.75077e-05
-SeniorDeveloperTest.LoadLogoEmptyFilenameThrows 14 9.63225e-05
+DeveloperTest.LoadLogoInvalidFileThrows 16 8.61243e-05
+SeniorDeveloperTest.ConstructorInitializesCorrectly 18 7.83358e-05
+SeniorDeveloperTest.LoadLogoValidFile 4 0.000416809
+SeniorDeveloperTest.LoadLogoInvalidFileThrows 18 7.40573e-05
+SeniorDeveloperTest.LoadLogoEmptyFilenameThrows 18 0.000113083
+JuniorDeveloperTest.ConstructorInitializesCorrectly 2 0.000866277
+JuniorDeveloperTest.LoadLogoValidFile 2 0.000991837
+JuniorDeveloperTest.LoadLogoInvalidFileThrows 2 0.00069233
+JuniorDeveloperTest.LoadLogoEmptyFilenameThrows 2 0.000665906
 ---
-DeveloperTest.LoadLogoValidFile
-SeniorDeveloperTest.LoadLogoValidFile
