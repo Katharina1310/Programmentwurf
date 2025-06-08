@@ -38,21 +38,28 @@ void Developer::drink_coffee() {
  * @throws std::runtime_error if the file cannot be opened.
  */
 void Developer::load_logo_from_file(const std::string& filename) {
+    // Check for empty filename
     if (filename.empty()) {
         throw std::invalid_argument("Filename is empty.");
     }
 
-    std::ifstream file(LOGO_PATH + filename);
+    // Construct full path to logo file
+    std::string fullPath = std::string(LOGO_PATH) + filename;
+
+    // Open the file
+    std::ifstream file(fullPath);
     if (!file.is_open()) {
-        throw std::runtime_error("Logo file could not be opened: " + filename);
+        throw std::runtime_error("Logo file could not be opened: " + fullPath);
     }
 
+    // Read the file content line by line
     std::ostringstream content;
     std::string line;
     while (std::getline(file, line)) {
         content << line << '\n';
     }
 
+    // Store the content in the logo attribute
     logo = content.str();
 }
 

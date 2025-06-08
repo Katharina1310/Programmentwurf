@@ -15,3 +15,4 @@ cd build
 echo "[4/4] Starting the application..."
 ./cmake_exec
 
+
